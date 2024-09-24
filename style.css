@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #EEF0F2;
+    color: #353B3C;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #EEF0F2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    margin-left: 20px;
+}
+
+.menu-icon span {
+    background-color: #353B3C;
+    height: 3px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* Positioning the three bars */
+.menu-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.menu-icon span:nth-child(2) {
+    top: 10px;
+}
+
+.menu-icon span:nth-child(3) {
+    top: 20px;
+}
+
+/* Navigation links, initially hidden using opacity and transform */
+.navbar {
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+    margin-right: auto;
+    transform: translateY(-10px); /* Move up slightly */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0s 0.5s; /* Delay visibility */
+}
+
+/* Wenn das Menü offen ist, werden die Elemente eingeblendet */
+.menu-open .navbar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0s;
+}
+
+.menu-open .navbar ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-open .language-switch {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-open .menu-icon span:nth-child(1) {
+    transform: rotate(45deg);
+    width: 40px;
+    top: 12px;
+}
+
+.menu-open .menu-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    width: 40px;
+    top: 12px;
+}
